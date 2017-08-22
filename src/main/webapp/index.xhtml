@@ -6,13 +6,61 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
-	<title>Projeto Web Index</title>
+	<title>Gerenciamento Quartel</title>
 </h:head>
 
 <h:body>
 	<p:panel style="text-align:center;">
-		<h:outputText value="Projeto Web" />
+		<h:outputText value="Gerenciamento Quartel" />
 	</p:panel>
+	
+	<!-- <ui:include src="/includes/companhia.xhtml" />  -->
+	
+    <p:tabView id="tViewGeral">
+        <p:tab title="Cadastro">
+            <p:tabView id="tViewCadastro" orientation="left">
+                <p:tab title="Companhia">
+                </p:tab>
+
+                <p:tab title="Reserva">
+                </p:tab>
+
+                <p:tab title="Militar">
+                    <p:outputLabel value="cadastro Militar junto com Pessoa e Usuario"></p:outputLabel>
+                </p:tab>
+
+                <p:tab title="Item">
+                    <p:tabView id="tViewItem">
+                        <p:tab title="Arma">
+                        </p:tab>
+
+                        <p:tab title="Municao">
+                        </p:tab>
+
+                        <p:tab title="Acessorio">
+                        </p:tab>
+                    </p:tabView>		
+                </p:tab>
+            </p:tabView>
+        </p:tab>
+
+        <p:tab title="Cautela">
+            <p:tabView id="tViewCautela" orientation="left">
+                <p:tab title="Incluir Cautela">
+                </p:tab>
+
+                <p:tab title="Consultar Cautela">
+                </p:tab>
+            </p:tabView>
+        </p:tab>
+    </p:tabView>	
+
+  	<br/>
+	
+  	<p:panelGrid>
+		<p:button id="btnCompanhia" value="Companhia"></p:button>
+	</p:panelGrid>
+	
 </h:body>
 
 </html>
