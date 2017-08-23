@@ -7,7 +7,19 @@
 	<packaging>war</packaging>
 	<name>projeto-web</name>
 
-
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+				<version>3.1</version>
+			</plugin>
+		</plugins>
+	</build>
+	
 	<repositories>
 		<repository>
 			<id>prime</id>
@@ -63,6 +75,7 @@
 			<artifactId>primefaces</artifactId>
 			<version>6.0</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.primefaces.themes</groupId>
 			<artifactId>all-themes</artifactId>
@@ -159,6 +172,14 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.35</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>9.4-1200-jdbc41</version>
+		</dependency>
+		
 
 	</dependencies>
 
