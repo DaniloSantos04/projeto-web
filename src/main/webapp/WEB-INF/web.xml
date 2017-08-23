@@ -5,7 +5,7 @@
 	version="3.1">
 
 	<display-name>projeto-web</display-name>
-
+	
 	<session-config>
 		<session-timeout>20</session-timeout>
 	</session-config>
@@ -35,5 +35,10 @@
 		<param-value>client</param-value>
 	</context-param>
 	<!-- JSF -->
-
+	
+	<context-param> 
+<param-name>com.sun.faces.writeStateAtFormEnd</param-name> 
+<param-value>false</param-value> 
+	</context-param>
+	
 </web-app>

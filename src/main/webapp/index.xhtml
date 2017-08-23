@@ -13,13 +13,12 @@
 	<p:panel style="text-align:center;">
 		<h:outputText value="Gerenciamento Quartel" />
 	</p:panel>
-	
-	<!-- <ui:include src="/includes/companhia.xhtml" />  -->
-	
+		
     <p:tabView id="tViewGeral">
         <p:tab title="Cadastro">
             <p:tabView id="tViewCadastro" orientation="left">
                 <p:tab title="Companhia">
+                	<ui:include src="/includes/companhia.xhtml" />
                 </p:tab>
 
                 <p:tab title="Reserva">

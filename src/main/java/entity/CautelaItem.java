@@ -1,5 +1,5 @@
 // default package
-// Generated 22/08/2017 17:19:50 by Hibernate Tools 4.3.5.Final
+// Generated 22/08/2017 21:13:35 by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
 import javax.persistence.Column;
