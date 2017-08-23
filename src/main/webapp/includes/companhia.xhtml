@@ -1,19 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:p="http://primefaces.org/ui">
+	
 	<p:outputLabel value="Cadastro Companhia"></p:outputLabel>
-	<br/>
-	<br/>
- 	<p:outputLabel id="lblNomeCompanhia" value="Nome: "></p:outputLabel>
-	<!-- <p:inputText value="#{companhiaController.companhia.nome}"/> -->
-	<br/>
-	<br/>
- 	<p:button value="Salvar"></p:button>
+	<br />
+	<br />
+	<p:outputLabel id="lblNomeCompanhia" value="Nome: "></p:outputLabel>
+	<p:inputText id="inputCompanhiaNome" value="#{companhiaController.companhia.nome}" process="@this" />
+	<br />
+	<br />
+	<p:commandButton value="Salvar" id="bt_salvar_companhia" update="@(#listaComps)"
+		actionListener="#{companhiaController.salvar}" ajax="true" process="@this"/>
 	
 	<p:outputLabel value="Dados companhia"></p:outputLabel>
-	
-</html>
+	<p:outputPanel>
+		<p:dataTable id="listaComps" var="comp" value="#{companhiaController.listaCompanhias}">
+			<p:column headerText="Ação">
+				 <p:commandLink id="cmdLinkEditarCompanhia" update="@(#inputCompanhiaNome)" actionListener="#{companhiaController.editar(comp)}">
+        			<h:outputText value="Editar" />
+   				</p:commandLink>
+			</p:column>
+			<p:column headerText="Nome">
+				<h:outputText value="#{comp.nome}" />
+			</p:column>
+		</p:dataTable>
+	</p:outputPanel>
+	</html>

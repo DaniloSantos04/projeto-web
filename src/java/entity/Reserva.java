@@ -18,7 +18,7 @@ public class Reserva implements java.io.Serializable {
 	private static final long serialVersionUID = -641336568940380231L;
 	private int id;
 	private Companhia companhia;
-	private Pessoa pessoa;
+	private Militar militarResponsavel;
 	private String sigla;
 	private String descricao;
 	private Set<Cautela> cautelas = new HashSet<Cautela>(0);
@@ -27,18 +27,18 @@ public class Reserva implements java.io.Serializable {
 	public Reserva() {
 	}
 
-	public Reserva(int id, Companhia companhia, Pessoa pessoa, String sigla) {
+	public Reserva(int id, Companhia companhia, Militar militar, String sigla) {
 		this.id = id;
 		this.companhia = companhia;
-		this.pessoa = pessoa;
+		this.militarResponsavel = militar;
 		this.sigla = sigla;
 	}
 
-	public Reserva(int id, Companhia companhia, Pessoa pessoa, String sigla, String descricao, Set<Cautela> cautelas,
+	public Reserva(int id, Companhia companhia, Militar militar, String sigla, String descricao, Set<Cautela> cautelas,
 			Set<ItemReserva> itemReservas) {
 		this.id = id;
 		this.companhia = companhia;
-		this.pessoa = pessoa;
+		this.militarResponsavel = militar;
 		this.sigla = sigla;
 		this.descricao = descricao;
 		this.cautelas = cautelas;
@@ -68,12 +68,12 @@ public class Reserva implements java.io.Serializable {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_responsavel", nullable = false)
-	public Pessoa getPessoa() {
-		return this.pessoa;
+	public Militar getMilitar() {
+		return this.militarResponsavel;
 	}
 
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
+	public void setMilitar(Militar militar) {
+		this.militarResponsavel = militar;
 	}
 
 	@Column(name = "sigla", nullable = false, length = 10)
