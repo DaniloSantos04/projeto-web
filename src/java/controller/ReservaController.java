@@ -17,6 +17,7 @@ public class ReservaController {
 	private List<Militar> listaMilitar;
 	
 
+	
 	public void salvar() {
 		try {
 			cadastroFacade.salvarReserva(reserva);

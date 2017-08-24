@@ -11,12 +11,12 @@ public class MilitarRN {
 	@Inject
 	private MilitarDAOImpl militarDAOImpl;
 	
-	public void salvarReserva(Militar companhia) throws Exception{
-		militarDAOImpl.salvarReserva(companhia);
+	public void salvarMilitar(Militar companhia) throws Exception{
+		militarDAOImpl.salvarMilitar(companhia);
 	}
 	
 	public List<Militar> buscarMilitar(String nome){
-		return militarDAOImpl.buscarReserva(nome);
+		return militarDAOImpl.buscarMilitar(nome);
 	}
 	
 	public List<Militar> todosMilitares(){

@@ -15,15 +15,15 @@
     </p:selectOneMenu>
 	<br/>
 	<p:outputLabel id="lblMilitar" value="Militar Responsável"></p:outputLabel>
-	<p:selectOneMenu id="oneMenuMilitaresReserva" value="#{reservaController.reserva.companhia}">
+	<p:selectOneMenu id="oneMenuMilitaresReserva" value="#{reservaController.reserva.militarResponsavel}">
        <f:selectItems value="#{reservaController.listaMilitar}" var="mil" itemLabel="#{mil.nomeGuerra}" itemValue="#{mil}"/>
     </p:selectOneMenu>
 	<br/>
 	<p:outputLabel id="lblNomeReserva" value="Nome da reserva: "></p:outputLabel>
-	<p:inputText id="inputCompanhiaNome" value="#{companhiaController.reserva.descricao}" process="@this" />
+	<p:inputText id="inputNomeReserva" value="#{reservaController.reserva.descricao}" process="@this" />
 	<br />
 	<p:outputLabel id="lblSiglaReserva" value="Sigla da reserva: "></p:outputLabel>
-	<p:inputText id="inputCompanhiaNome" value="#{companhiaController.reserva.sigla}" process="@this" />
+	<p:inputText id="inputSiglaReserva" value="#{reservaController.reserva.sigla}" process="@this" />
 	<br />
 	</p:outputPanel>
  	<p:commandButton value="Salvar" id="bt_salvar_reserva" update="@(#listareservaos)" actionListener="#{reservaController.salvar}" ajax="true" process="@this"/>

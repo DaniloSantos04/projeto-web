@@ -4,14 +4,18 @@ import java.entity.Companhia;
 import java.facade.CadastroFacade;
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 
+@RequestScoped
+@ManagedBean(name = "companhiaController")
 public class CompanhiaController {
 
 	@Inject
 	private CadastroFacade cadastroFacade;
 
-	private Companhia companhia;
+	private Companhia companhia = new Companhia();
 	private List<Companhia> listaCompanhias;
 	
 	

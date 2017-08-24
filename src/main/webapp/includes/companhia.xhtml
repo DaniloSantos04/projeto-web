@@ -8,13 +8,28 @@
 	<p:outputLabel value="Cadastro Companhia"></p:outputLabel>
 	<br />
 	<br />
-	<p:outputLabel id="lblNomeCompanhia" value="Nome: "></p:outputLabel>
-	<p:inputText id="inputCompanhiaNome" value="#{companhiaController.companhia.nome}" process="@this" />
-	<br />
-	<br />
-	<p:commandButton value="Salvar" id="bt_salvar_companhia" update="@(#listaComps)"
-		actionListener="#{companhiaController.salvar}" ajax="true" process="@this"/>
 	
+	<h:form>
+	
+		<p:outputLabel for="inputCompanhiaNome" value="Nome: "/>
+		<p:inputText id="inputCompanhiaNome" value="#{companhiaController.companhia.nome}" process="@this" />	
+		
+		<p:commandButton value="Salvar" 
+						id="btSalvarCompanhia" 
+						update="@(#listaComps)"
+						actionListener="#{companhiaController.salvar}" 
+						process="@this"/>
+	
+	</h:form>
+	
+	<br />
+	<br />
+	
+	
+	
+	
+	<br/>
+	<br/>
 	<p:outputLabel value="Dados companhia"></p:outputLabel>
 	<p:outputPanel>
 		<p:dataTable id="listaComps" var="comp" value="#{companhiaController.listaCompanhias}">

@@ -3,11 +3,13 @@ package java.facade;
 import java.entity.Acessorio;
 import java.entity.Arma;
 import java.entity.Companhia;
+import java.entity.Militar;
 import java.entity.Municao;
 import java.entity.Reserva;
 import java.rn.AcessorioRN;
 import java.rn.ArmaRN;
 import java.rn.CompanhiaRN;
+import java.rn.MilitarRN;
 import java.rn.MunicaoRN;
 import java.rn.ReservaRN;
 import java.util.List;
@@ -30,6 +32,9 @@ public class CadastroFacade {
 	
 	@Inject
 	private ReservaRN reservaRN;
+	
+	@Inject
+	private MilitarRN militarRN;
 	
 	
 	public List<Companhia> buscarCompanhiaNome(String nome){
@@ -90,6 +95,18 @@ public class CadastroFacade {
 	
 	public List<Reserva> todasReservas(){
 		return reservaRN.todasReservas();
+	}
+	
+	public List<Militar> buscarMilitar(String nome){
+		return militarRN.buscarMilitar(nome);
+	}
+	
+	public void salvarMilitar(Militar companhia) throws Exception {
+		militarRN.salvarMilitar(companhia);
+	}
+	
+	public List<Militar> todosMilitares(){
+		return militarRN.todosMilitares();
 	}
 
 
